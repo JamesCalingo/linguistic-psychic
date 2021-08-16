@@ -20,7 +20,7 @@ while guesses < maxGuess:
      print("You've guessed that already!\nSpoiler alert: it's not the right answer.")
    else:
       guesses += 1
-      usedLetters.append(currentGuess.upper())
+      usedLetters.append(currentGuess)
       print(f"Incorrect. You have {maxGuess - guesses} more chances")
 
 print(f"The answer was {answer}")
