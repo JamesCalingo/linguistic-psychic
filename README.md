@@ -14,7 +14,7 @@ Now, as I try to expand my knowledge base by learning more languages, I want to 
 # Hopefully coming soon
 - Go
 - Rust
-- ...honestly, I don't even know what other versions of this I'd want to do, but I'm sure 
+- ...honestly, I don't even know what other versions of this I'd want to do, but I'm sure I'll find something in the future.
 
 # Also in the future
 For now, I'm doing these as simple Terminal applications - to play the game, you need to use your computer's Terminal window (or whatever it is for Windows).
