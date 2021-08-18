@@ -14,8 +14,8 @@ while guesses < maxGuess:
    if currentGuess == answer:
      print("You win!!")
      break
-   elif len(currentGuess) > 1:
-     print("You, uh, seem to have entered more than one character there.\nI can promise you you're only looking for a single letter.")
+   elif len(currentGuess) != 1:
+     print("You, uh, seem to have entered more (or less) than one character there.\nI can promise you you're only looking for a single letter.")
    elif currentGuess not in string.ascii_uppercase:
      print("That's not a letter!")
    elif currentGuess in usedLetters:
