@@ -19,6 +19,6 @@ Now, as I try to expand my knowledge base by learning more languages, I want to 
 # Also in the future
 For now, I'm doing these as simple Terminal applications - to play the game, you need to use your computer's Terminal window (or whatever it is for Windows).
 
-I'd like to make these more accessible by making them web apps. Currently, I don't plan on trying to learn the tools to do that, but it is definitely something I can see happening down the line.
+I'd like to make these more accessible by making them web apps. Currently, I'm not 100% sure if I'm going to try and learn the tools to do that (i.e. Django or WebAssembly), but it is definitely something I can see happening down the line.
 
 If you want to see the original version of this game, it can be found <a href="https://jamescalingo.dev/PsychicGame" target="blank">right here</a> and the GitHub repo can be found [here](https://github.com/JamesCalingo/PsychicGame).
