@@ -27,11 +27,3 @@ while guesses < maxGuess:
 
 print(f"The answer was {answer}")
 
-# This allows the player to play the game one time. If you wanted to allow multiple games, you could do something like:
-
-def start_game:
-   guesses = 0
-   usedLetters = []
-   answer = random.choice(string.ascii_uppercase)
-   
-# In place of the "break", and then going from there.
