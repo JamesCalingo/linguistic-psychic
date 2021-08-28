@@ -10,10 +10,11 @@ Now, as I try to expand my knowledge base by learning more languages, I want to 
 
 # Versions available
 - Python
+- Rust...ish. It's a numbers game instead of a letters game.
 
 # Hopefully coming soon
+- Rust (a letters version)
 - Go
-- Rust
 - ...honestly, I don't even know what other versions of this I'd want to do, but I'm sure I'll find something in the future.
 
 # Also in the future
