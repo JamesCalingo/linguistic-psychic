@@ -9,8 +9,7 @@ maxGuess = 10
 # print(answer) - I had this here for testing, but you probably wouldn't want this for the actual game unless youre a CHEATER!
 while guesses < maxGuess:
    currentGuess = input().upper()
-   # Note the use of .upper() here. Without it, upper and lower case letters are considered different characters,
-   # so if the answer was "A" but you typed in "a", it'd be considered wrong.
+   # Note the use of .upper() here. Without it, upper and lower case letters are considered different characters, so if the answer was "A" but you typed in "a", it'd be considered wrong.
    if currentGuess == answer:
      print("You win!!")
      break
@@ -26,4 +25,3 @@ while guesses < maxGuess:
       print(f"Incorrect. You have {maxGuess - guesses} more chances")
 
 print(f"The answer was {answer}")
-
