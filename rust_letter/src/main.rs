@@ -34,8 +34,7 @@ fn main() {
             println!("That's not a letter. Try again.")
         } else if previous_guesses.contains(&guess) {
             println!("You've guessed this already. Try something else.")
-        }
-        else {
+        } else {
             i -= 1;
             previous_guesses.push(guess);
             // This is because I don't like implying you can try after the game ends

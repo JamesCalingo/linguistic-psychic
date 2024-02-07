@@ -3,13 +3,13 @@ use std::cmp::Ordering;
 use std::io;
 
 fn main() {
-    println!("Guess the number!");
+    println!("Guess the number! It's between 1 and 1000 if that helps.");
 
     let secret_number = rand::thread_rng().gen_range(1..1001);
     let mut tries = 0;
     // println!("The secret number is {}", secret_number);
     loop {
-        println!("Input guess now.");
+        println!("Your guess: ");
 
         let mut guess = String::new();
 
@@ -22,17 +22,27 @@ fn main() {
             Err(_) => continue,
         };
 
+        if guess > 1000 {
+            println!("The secret number is less than 1000.");
+            continue
+        }
+
         match guess.cmp(&secret_number) {
             Ordering::Less => {
                 tries += 1;
-                println!("Higher...{}", tries)},
+                println!("The secret number is higher than {}", guess)
+            }
             Ordering::Greater => {
                 tries += 1;
-                println!("Lower...{}", tries)},
+                println!("The secret number is lower than {}", guess)
+            }
             Ordering::Equal => {
                 tries += 1;
-                println!("That's it!");
-                println!("Guesses: {}", tries);
+                if tries == 1 {
+                    println!("Wow! You got that in one try!");
+                }else {
+                println!("You got it in {} guesses!", tries);
+                }
                 break;
             }
         }
