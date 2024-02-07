@@ -9,6 +9,7 @@ fn main() {
     let mut tries = 0;
     // println!("The secret number is {}", secret_number);
     loop {
+        tries += 1;
         println!("Your guess: ");
 
         let mut guess = String::new();
@@ -29,15 +30,12 @@ fn main() {
 
         match guess.cmp(&secret_number) {
             Ordering::Less => {
-                tries += 1;
                 println!("The secret number is higher than {}", guess)
             }
             Ordering::Greater => {
-                tries += 1;
                 println!("The secret number is lower than {}", guess)
             }
             Ordering::Equal => {
-                tries += 1;
                 if tries == 1 {
                     println!("Wow! You got that in one try!");
                 }else {
