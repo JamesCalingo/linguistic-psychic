@@ -3,7 +3,7 @@ use std::io;
 use std::vec::Vec;
 
 fn main() {
-    println!("Guess the letter!");
+    println!("Guess the secret letter within ten guesses. Good luck!");
     let letters: [char; 26] = [
         'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k',
         'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm',
@@ -12,7 +12,7 @@ fn main() {
     let secret_letter = letters[secret_number];
     let mut previous_guesses = Vec::new();
     let mut i = 10;
-    println!("The secret letter is {}", secret_letter);
+    // println!("The secret letter is {}", secret_letter);
     while i > 0 {
         let mut guess = String::new();
 
