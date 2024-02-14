@@ -2,26 +2,30 @@ import random
 import string
 
 print("Guess a letter within ten tries.")
-usedLetters = []
+used_letters = []
 answer = random.choice(string.ascii_uppercase)
 guesses = 0
-maxGuess = 10
+max_guess = 10
 # print(answer) - I had this here for testing, but you probably wouldn't want this for the actual game unless youre a CHEATER!
-while guesses < maxGuess:
-   currentGuess = input().upper()
+while guesses < max_guess:
+   current_guess = input().upper()
    # Note the use of .upper() here. Without it, upper and lower case letters are considered different characters, so if the answer was "A" but you typed in "a", it'd be considered wrong.
-   if currentGuess == answer:
-     print("You win!!")
+   if current_guess == answer:
+     print("You got it!")
      break
-   elif len(currentGuess) != 1:
-     print("You, uh, seem to have entered more (or less) than one character there.\nI can promise you you're only looking for a single letter.")
-   elif currentGuess not in string.ascii_uppercase:
-     print("That's not a letter!")
-   elif currentGuess in usedLetters:
-     print("You've guessed that already!\nSpoiler alert: it's not the right answer.")
+   elif len(current_guess) != 1:
+     print("You seem to have entered more (or less) than one character there. Try again.")
+   elif current_guess not in string.ascii_uppercase:
+     print("That's not a letter! Try again.")
+   elif current_guess in used_letters:
+     print("You've guessed that already. Try again.")
    else:
       guesses += 1
-      usedLetters.append(currentGuess)
-      print(f"Incorrect. You have {maxGuess - guesses} more chances")
+      used_letters.append(current_guess)
+      if guesses < 9:
+        print(f"Nope...you have {max_guess - guesses} more chances")
+      else:
+        print("Nope. Only one guess left...make it count!")
 
-print(f"The answer was {answer}")
+if guesses == max_guess:
+  print(f"Game over! The answer was {answer}")
