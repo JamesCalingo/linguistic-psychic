@@ -9,7 +9,7 @@ fn main() {
         'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm',
     ];
     let secret_number = rand::thread_rng().gen_range(1..letters.len());
-    let secret_letter = letters[secret_number];
+    let secret_letter = letters[secret_number].to_ascii_uppercase();
     let mut previous_guesses = Vec::new();
     let mut i = 10;
     // println!("The secret letter is {}", secret_letter);
@@ -25,18 +25,19 @@ fn main() {
             Err(_) => continue,
         };
 
+        let uppercase  = guess.to_ascii_uppercase();
         // println!("You guessed: {}", guess);
 
-        if guess == secret_letter {
+        if uppercase == secret_letter {
             println!("That's it!");
             break;
-        } else if !letters.contains(&guess) {
+        } else if !letters.contains(&guess.to_ascii_lowercase()) {
             println!("That's not a letter. Try again.")
-        } else if previous_guesses.contains(&guess) {
+        } else if previous_guesses.contains(&uppercase) {
             println!("You've guessed this already. Try something else.")
         } else {
             i -= 1;
-            previous_guesses.push(guess);
+            previous_guesses.push(uppercase);
             // This is because I don't like implying you can try after the game ends
             if i != 0 {
                 println!("Nope. Try again.");
