@@ -24,7 +24,8 @@ while guesses < max_guess:
       used_letters.append(current_guess)
       if guesses < 9:
         print(f"Nope...you have {max_guess - guesses} more chances")
-      else:
+      #I realize that this elif feels silly, but it will run on 10 if it's just an else statement
+      elif guesses == 9:
         print("Nope. Only one guess left...make it count!")
 
 if guesses == max_guess:
