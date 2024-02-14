@@ -28,5 +28,6 @@ while guesses < max_guess:
       elif guesses == 9:
         print("Nope. Only one guess left...make it count!")
 
+#Only to run if the game is lost
 if guesses == max_guess:
   print(f"Game over! The answer was {answer}")
