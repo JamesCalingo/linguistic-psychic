@@ -10,6 +10,7 @@ import (
 func main() {
 	letters := []string{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
 	guesses := make([]string, 0)
+	// For some reason, setting chances to 10 makes things not work the way I want, so I set them to 9
 	chances := 9
 	answer := letters[rand.Intn(len(letters))]
 
@@ -33,7 +34,7 @@ func main() {
 			chances -= 1
 			guesses = append(guesses, strings.ToUpper(guess))
 			fmt.Println("Your previous guesses: ", guesses)
-			fmt.Println("Guesses remaining:", chances)
+			fmt.Println("Guesses remaining:", chances + 1)
 		}
 	}
 }
