@@ -1,45 +1,39 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"math/rand"
-	"os"
 	"slices"
 	"strings"
 )
 
 func main() {
-	letters := []string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"}
+	letters := []string{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
 	guesses := make([]string, 0)
-	// var guess string
 	chances := 9
-	answer := strings.ToUpper(letters[rand.Intn(len(letters))])
-	reader := bufio.NewReader(os.Stdin)
-	var previouslyGuessed bool
-	fmt.Println("Guess the letter. You have ten tries. Good luck!", answer)
+	answer := letters[rand.Intn(len(letters))]
+
+	fmt.Println("Guess the letter. You have ten tries. Good luck!")
 	for chances >= 0 {
 		fmt.Print("Input a guess: ")
-		input, _, _ := reader.ReadRune()
-		guess := string(input)
-		guess = strings.TrimSpace(guess)
-		if !slices.Contains(letters, strings.ToLower(guess)) {
+		var guess string
+		fmt.Scanln(&guess)
+		if !slices.Contains(letters, strings.ToUpper(guess)) {
 			fmt.Println("This is an invalid input. Try again.")
-		} else if chances == 0 {
-			fmt.Println("Game Over! The answer was", answer)
-			break
+		} else if slices.Contains(guesses, strings.ToUpper(guess)) {
+			fmt.Println("You've guessed this already. Try again.")
 		} else if strings.ToUpper(guess) == answer {
 			fmt.Println("You got it!")
 			break
+		} else if chances == 0 {
+			fmt.Println("Game Over! The answer was", answer)
+			break
 		} else {
-			fmt.Println("Wrong")
+			fmt.Println("Nope. Try again.")
 			chances -= 1
-			guesses = append(guesses, guess)
-			fmt.Println("Guesses remaining:", chances+1)
-			previouslyGuessed = slices.Contains(guesses, guess)
-			if previouslyGuessed {
-				fmt.Println(previouslyGuessed, guesses)
-			}
+			guesses = append(guesses, strings.ToUpper(guess))
+			fmt.Println("Your previous guesses: ", guesses)
+			fmt.Println("Guesses remaining:", chances)
 		}
 	}
 }
