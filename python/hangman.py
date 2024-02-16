@@ -34,10 +34,10 @@ while guesses < max_guess:
     print("You've guessed that already. Try again.")
    else:
     if current_guess not in answer:
-       print("Not found.")
+       print(f"This puzzle does not have the letter {current_guess}.")
        guesses += 1
        used_letters.append(current_guess)
-       print(f"You have {max_guess - guesses} chances left")
+       print(f"Remaining chances: {max_guess - guesses}")
        print("Your previously guessed letters: ", [letter for letter in used_letters if letter not in answer])
     else:
        print(f"We have at least one {current_guess}!")
