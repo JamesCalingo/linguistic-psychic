@@ -30,7 +30,7 @@ letters = [
 defmodule Gameloop do
 
   def check(guess, answer) do
-    # guesses = 10
+    chances = 10
     cond do
       String.length(guess) != 2 ->
         guess = IO.gets("This is not a valid guess. Try again: ")
@@ -41,9 +41,9 @@ defmodule Gameloop do
 
       true ->
         guess = IO.gets("Nope. Guess again: ")
+        IO.puts("Chances remaining: " <> to_string(chances))
         Gameloop.check(guess, answer)
-        # chances = chances - 1
-        # IO.puts("Chances remaining: " <> to_string(chances))
+        chances = chances - 1
     end
   end
 end
