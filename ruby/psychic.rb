@@ -12,11 +12,11 @@ chances = 10
 while chances > 0
     guess = gets.strip.upcase
     if !letters.include? guess || guess.length > 1
-        puts "Not an eligible guess"
+        puts "That is not an eligible guess."
     elsif previous.include? guess
-        puts "You've guessed this already...it's still not the answer"
+        puts "You've guessed this already."
     elsif answer.strip.upcase == guess
-        puts "You're Winner!"
+        puts "You Win!"
         solved = true
         break
     else
